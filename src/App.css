@@ -1,0 +1,45 @@
+.dropdown {
+  box-shadow: 0 0 8px gray;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent; /* Add transparent border to avoid collapse */
+}
+
+.item-container {
+  width: 200px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: -1px; /* Remove the gap between dropdown and items */
+  border-top: 1px solid #ccc; /* Add top border to item container */
+  box-shadow: 0 0 8px gray;
+  max-height: 40vh;
+  overflow-y: scroll;
+}
+.item-container::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust this value to match the shadow offset */
+  left: 0;
+  right: 0;
+  height: 10px; /* Match this value to the top offset to mask the shadow */
+  background-color: #fff; /* Same as the background color of the parent or container */
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item-container p {
+  margin: 0; /* Remove any margin */
+  padding: 0.5rem; /* Ensure consistent padding */
+}
+
+*,
+body {
+  box-sizing: border-box;
+}
